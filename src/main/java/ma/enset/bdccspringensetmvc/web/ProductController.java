@@ -60,4 +60,24 @@ public class ProductController {
         return "logout";
     }
 
+    @GetMapping("/user/search")
+    public String searchProducts(@RequestParam("keyword") String keyword, Model model) {
+        List<Product> products = productRepository.findByNameContainsIgnoreCase(keyword);
+        model.addAttribute("productList", products);
+        return "products";
+    }
+    @PostMapping("/admin/updateProduct")
+    public String updateProduct(@Valid Product product, BindingResult result){
+        if(result.hasErrors()) return "editProduct";
+        productRepository.save(product);
+        return "redirect:/user/index";
+    }
+    @GetMapping("/admin/edit")
+    public String editProduct(@RequestParam("id") Long id, Model model){
+        Product product = productRepository.findById(id).orElseThrow();
+        model.addAttribute("product", product);
+        return "editProduct";
+    }
+
+
 }

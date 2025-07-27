@@ -5,14 +5,16 @@
       layout:decorate="~{layout1}">
 <head>
     <meta charset="UTF-8">
-    <title>Add Product</title>
+    <title>Edit Product</title>
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.5/css/bootstrap.min.css}">
 </head>
 <body>
 <div class="container py-4" layout:fragment="content1">
-    <h2 class="mb-4 text-center">➕ Add New Product</h2>
+    <h2 class="mb-4 text-center">✏️ Edit Product</h2>
 
-    <form th:action="@{/admin/saveProduct}" method="post" class="card shadow p-4 mx-auto" style="max-width: 600px;">
+    <form th:action="@{/admin/updateProduct}" method="post" class="card shadow p-4 mx-auto" style="max-width: 600px;">
+        <input type="hidden" name="id" th:value="${product.id}"/>
+
         <div class="mb-3">
             <label for="name" class="form-label">📝 Name</label>
             <input type="text" class="form-control" id="name" name="name" th:value="${product.name}" placeholder="Enter product name">
@@ -32,7 +34,7 @@
         </div>
 
         <div class="text-center">
-            <button type="submit" class="btn btn-primary">✅ Save Product</button>
+            <button type="submit" class="btn btn-success">💾 Update Product</button>
         </div>
     </form>
 </div>
