@@ -29,7 +29,7 @@ This is a **Spring Boot + Thymeleaf** web application for managing products. It 
 
 ### 🚫 Access Denied
 
-![Not Authorized](C:\Users\saade\bdcc-spring-enset-mvc\screenshots\access_denied.png)
+![Not Authorized](screenshots/access_denied.png)
 
 ## 🧰 Tech Stack
 
@@ -44,8 +44,8 @@ This is a **Spring Boot + Thymeleaf** web application for managing products. It 
 ## 🛠️ Run Locally
 
 ```bash
-git clone https://github.com/yourname/spring-product-crud.git
-cd spring-product-crud
+git clone https://github.com/saadBr/-bdcc-spring-enset-mvc.git
+cd -bdcc-spring-enset-mvc
 mvn spring-boot:run
 ```
 
